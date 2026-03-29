@@ -15,6 +15,7 @@ param(
     [string] $FtpHost,
     [Parameter(Mandatory = $true)]
     [string] $FtpUser,
+    [int] $FtpPort = 21,
     [string] $RemotePath = "/",
     [string] $LocalPath = "",
     [switch] $DryRun,
@@ -71,7 +72,7 @@ if ($rp[0] -ne '/') { $rp = "/" + $rp }
 
 # Sesion FTP o FTPS; luego cd al directorio remoto y sync al directorio actual (.)
 $scheme = if ($UseFtps) { "ftps" } else { "ftp" }
-$sessionUrl = "${scheme}://$([uri]::EscapeDataString($FtpUser)):$([uri]::EscapeDataString($pass))@${FtpHost}/"
+$sessionUrl = "${scheme}://$([uri]::EscapeDataString($FtpUser)):$([uri]::EscapeDataString($pass))@${FtpHost}:${FtpPort}/"
 
 $tempScript = [System.IO.Path]::GetTempFileName()
 $syncCmd = if ($DryRun) { "ls" } else { "synchronize remote -delete `"$localWin`" ." }
@@ -87,7 +88,7 @@ Set-Content -Path $tempScript -Value $lines -Encoding UTF8
 
 try {
     Write-Host "Local:  $localWin"
-    Write-Host "Remoto: ${scheme}://${FtpHost}${RemotePath}"
+    Write-Host "Remoto: ${scheme}://${FtpHost}:${FtpPort}${RemotePath}"
     & $exe /script=$tempScript
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 }
