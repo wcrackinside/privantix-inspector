@@ -26,6 +26,13 @@ func InferType(value string) string {
 	if emailRegex.MatchString(v) {
 		return "email"
 	}
+	// Dates before phone: ISO dates (e.g. 2026-03-05) match phoneRegex digit/hyphen pattern.
+	if _, ok := parseDateTime(v); ok {
+		if strings.Contains(v, ":") {
+			return "datetime"
+		}
+		return "date"
+	}
 	if phoneRegex.MatchString(v) {
 		return "phone"
 	}
@@ -37,12 +44,6 @@ func InferType(value string) string {
 	}
 	if strings.EqualFold(v, "true") || strings.EqualFold(v, "false") || v == "0" || v == "1" {
 		return "boolean"
-	}
-	if _, ok := parseDateTime(v); ok {
-		if strings.Contains(v, ":") {
-			return "datetime"
-		}
-		return "date"
 	}
 	if idLikeRegex.MatchString(v) {
 		return "id_like"

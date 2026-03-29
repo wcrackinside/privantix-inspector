@@ -23,7 +23,9 @@ jobs:
           go-version: "1.23"
 
       - name: Run tests
-        run: go test ./...
+        # Exclude privantix-acl-manager (Windows GUI + Fyne; not built in release matrix)
+        run: |
+          go test $(go list ./... | grep -v '/cmd/privantix-acl-manager')
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6

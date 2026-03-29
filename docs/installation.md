@@ -1,5 +1,9 @@
 # Installation
 
+## Pre-built binaries
+
+[GitHub Releases](https://github.com/wcrackinside/privantix-inspector/releases) publishes ZIP (Windows) and tar.gz (Linux/macOS) archives per version. Each includes the CLI tools, `docs/`, `examples/`, and `content/products/`. Verify with `checksums.txt` when provided.
+
 ## Prerequisites
 
 - **Go 1.24** or later (for building from source)

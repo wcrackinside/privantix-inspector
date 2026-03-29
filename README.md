@@ -33,6 +33,12 @@ privantix-compare --left ./output/run1.json --right ./output/run2.json --output 
 privantix-acl-audit --path W:\datos --output ./output --trusted-groups ./examples/trusted-groups.json
 ```
 
+## Binary releases
+
+Download ready-to-run builds from **[GitHub Releases](https://github.com/wcrackinside/privantix-inspector/releases)**. Each archive includes the four CLI tools (`privantix-inspector`, `privantix-acl-audit`, `privantix-catalog`, `privantix-compare`), plus `docs/`, `examples/`, and `content/products/`. Use `checksums.txt` to verify downloads.
+
+To publish a new release: create a [semantic version](https://semver.org/) tag and push it (for example `v0.2.0`). The [release workflow](.github/workflows/release.yml) builds with [GoReleaser](.goreleaser.yml) and uploads the assets to that release.
+
 ## Features
 
 - **Data Inspector**: CSV, TXT, TSV, XLSX, RDAT, DAT, Parquet, ZIP, 7z, RAR (archives read in-memory)
