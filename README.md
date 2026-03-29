@@ -56,6 +56,8 @@ To publish a new release: create a [semantic version](https://semver.org/) tag a
 
 ## Documentation
 
+Ecosystem layout (repos, web, releases): [`docs/PRIVANTIX_ECOSYSTEM.md`](docs/PRIVANTIX_ECOSYSTEM.md).
+
 Full documentation is in the [`docs/`](docs/) folder:
 
 - [Overview](docs/overview.md)
