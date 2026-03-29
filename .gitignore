@@ -1,3 +1,6 @@
+# Archives (avoid committing site snapshots)
+*.zip
+
 # Build / binaries
 *.exe
 *.exe~
