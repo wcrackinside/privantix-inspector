@@ -20,12 +20,12 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: "1.23"
+          go-version: "1.24"
 
       - name: Run tests
-        # Exclude privantix-acl-manager (Windows GUI + Fyne; not built in release matrix)
+        # Exclude: acl-manager (Fyne GUI); root package (check_owner.go is Windows-only syscall)
         run: |
-          go test $(go list ./... | grep -v '/cmd/privantix-acl-manager')
+          go test $(go list ./... | grep -v '/cmd/privantix-acl-manager' | grep -v '^privantix-source-inspector$')
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
