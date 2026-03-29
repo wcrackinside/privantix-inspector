@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privantix Catalog — Catálogo de datasets</title>
+  <style>
+    :root {
+      --primary: #0b1f3b;
+      --accent: #18b7a0;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 24px; background: var(--bg); color: var(--text); }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 { font-size: 2rem; margin: 0 0 8px; color: var(--primary); }
+    .subtitle { color: var(--muted); margin-bottom: 24px; }
+    
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+    .card-title { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+    .card-value { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+    
+    .search-box { margin-bottom: 24px; }
+    .search-box input { width: 100%; max-width: 400px; padding: 10px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; }
+    
+    .dataset { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
+    .dataset-header { padding: 16px 20px; background: #f8fafc; border-bottom: 1px solid var(--border); cursor: pointer; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .dataset-header:hover { background: #f1f5f9; }
+    .dataset-name { font-weight: 600; color: var(--primary); }
+    .dataset-meta { font-size: 0.875rem; color: var(--muted); }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: #e0f2fe; color: #0369a1; }
+    .badge-warn { background: #fef3c7; color: #92400e; }
+    .dataset-body { padding: 20px; display: none; }
+    .dataset-body.open { display: block; }
+    
+    .cols-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .cols-table th, .cols-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    .cols-table th { background: #f1f5f9; color: var(--muted); font-weight: 600; }
+    .cols-table tr:last-child td { border-bottom: none; }
+    
+    .rules-list { margin-top: 12px; }
+    .rule { padding: 6px 10px; background: #fef3c7; border-radius: 6px; font-size: 0.8rem; margin-bottom: 4px; }
+    .gov-flags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .gov-flag { font-size: 0.75rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privantix Catalog</h1>
+    <p class="subtitle">Catálogo de datasets generado desde privantix-inspector. Origen: W:\11_CONADI\04_DATOS</p>
+    
+    <div class="summary">
+      <div class="card">
+        <div class="card-title">Datasets</div>
+        <div class="card-value">6</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Columnas totales</div>
+        <div class="card-value">105</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Reglas detectadas</div>
+        <div class="card-value">51</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Generado</div>
+        <div class="card-value" style="font-size: 1rem;">2026-03-07 00:33</div>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Buscar dataset o columna..." onkeyup="filterCatalog()">
+    </div>
+
+    <div id="catalog">
+      
+      <div class="dataset" data-name="CONADI_AGRUPACIONES_202204_REG_8189_20230724.csv" data-path="W:\11_CONADI\04_DATOS\CONADI_AGRUPACIONES_202204_REG_8189_20230724.csv" data-cols="REGION PROVINCIA COMUNA OFICINA_CONADI N_PERSONALIDAD_JURIDICA TIPO_AGRUPACION NOMBRE SECTOR TIPO_SECTOR N_FOLIO N_FAMILIAS N_SOCIOS FECHA_CONSTITUCION FECHA_RENOVACION_DIRECTIVA ESTADO_DIRECTIVA DIRECCION_POSTAL OBSERVACION ESPACIO_TERRITORIAL INFORME_JURIDICO EMAIL_CONTACTO FONO_CONTACTO RUT_AGRUPACION DV PUEBLO_ORIGINARIO ESTADO_P_J ARCHIVO FECHA_ARCH ">
+        <div class="dataset-header" onclick="toggleDataset(this)">
+          <div>
+            <span class="dataset-name">CONADI_AGRUPACIONES_202204_REG_8189_20230724.csv</span>
+            <div class="dataset-meta">W:\11_CONADI\04_DATOS\CONADI_AGRUPACIONES_202204_REG_8189_20230724.csv · .csv · 8190 filas · 27 columnas</div>
+          </div>
+          <div>
+            <span class="badge">.csv</span>
+            
+            <span class="badge">ACL</span>
+            <span class="badge badge-warn">11 reglas</span>
+          </div>
+        </div>
+        <div class="dataset-body">
+          <table class="cols-table">
+            <thead><tr><th>Columna</th><th>Tipo</th><th>Nulos %</th><th>Max length</th></tr></thead>
+            <tbody>
+              
+              <tr><td><strong>REGION</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>18</td></tr>
+              
+              <tr><td><strong>PROVINCIA</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>11</td></tr>
+              
+              <tr><td><strong>COMUNA</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>20</td></tr>
+              
+              <tr><td><strong>OFICINA_CONADI</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>36</td></tr>
+              
+              <tr><td><strong>N_PERSONALIDAD_JURIDICA</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>3</td></tr>
+              
+              <tr><td><strong>TIPO_AGRUPACION</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>19</td></tr>
+              
+              <tr><td><strong>NOMBRE</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>112</td></tr>
+              
+              <tr><td><strong>SECTOR</strong></td><td><span class="badge">string</span></td><td>0.50</td><td>102</td></tr>
+              
+              <tr><td><strong>TIPO_SECTOR</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>6</td></tr>
+              
+              <tr><td><strong>N_FOLIO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>39</td></tr>
+              
+              <tr><td><strong>N_FAMILIAS</strong></td><td><span class="badge">integer</span></td><td>22.50</td><td>3</td></tr>
+              
+              <tr><td><strong>N_SOCIOS</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>3</td></tr>
+              
+              <tr><td><strong>FECHA_CONSTITUCION</strong></td><td><span class="badge">datetime</span></td><td>0.00</td><td>20</td></tr>
+              
+              <tr><td><strong>FECHA_RENOVACION_DIRECTIVA</strong></td><td><span class="badge">datetime</span></td><td>0.00</td><td>20</td></tr>
+              
+              <tr><td><strong>ESTADO_DIRECTIVA</strong></td><td><span class="badge">string</span></td><td>100.00</td><td>0</td></tr>
+              
+              <tr><td><strong>DIRECCION_POSTAL</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>248</td></tr>
+              
+              <tr><td><strong>OBSERVACION</strong></td><td><span class="badge">string</span></td><td>28.50</td><td>521</td></tr>
+              
+              <tr><td><strong>ESPACIO_TERRITORIAL</strong></td><td><span class="badge">string</span></td><td>11.00</td><td>36</td></tr>
+              
+              <tr><td><strong>INFORME_JURIDICO</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>2</td></tr>
+              
+              <tr><td><strong>EMAIL_CONTACTO</strong></td><td><span class="badge">email</span></td><td>69.50</td><td>37</td></tr>
+              
+              <tr><td><strong>FONO_CONTACTO</strong></td><td><span class="badge">phone</span></td><td>30.00</td><td>61</td></tr>
+              
+              <tr><td><strong>RUT_AGRUPACION</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>DV</strong></td><td><span class="badge">integer</span></td><td>14.50</td><td>1</td></tr>
+              
+              <tr><td><strong>PUEBLO_ORIGINARIO</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>13</td></tr>
+              
+              <tr><td><strong>ESTADO_P_J</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>10</td></tr>
+              
+              <tr><td><strong>ARCHIVO</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>61</td></tr>
+              
+              <tr><td><strong>FECHA_ARCH</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+            </tbody>
+          </table>
+          
+          <div class="rules-list">
+            <strong>Reglas:</strong>
+            
+            <div class="rule">encoding_not_utf8 (warning)</div>
+            
+            <div class="rule">potential_sensitive_data → REGION (info)</div>
+            
+            <div class="rule">potential_sensitive_data → COMUNA (info)</div>
+            
+            <div class="rule">potential_sensitive_data → TIPO_SECTOR (info)</div>
+            
+            <div class="rule">potential_sensitive_data → N_FOLIO (info)</div>
+            
+            <div class="rule">high_null_ratio → ESTADO_DIRECTIVA (warning)</div>
+            
+            <div class="rule">high_null_ratio → EMAIL_CONTACTO (warning)</div>
+            
+            <div class="rule">potential_sensitive_data → EMAIL_CONTACTO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → FONO_CONTACTO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → ESTADO_P_J (info)</div>
+            
+            <div class="rule">potential_sensitive_data → FECHA_ARCH (info)</div>
+            
+          </div>
+          
+          <div class="gov-flags">
+            
+            <span class="gov-flag">✓ ACL</span>
+            <span class="gov-flag">Muestras ocultas (gobierno)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dataset" data-name="CONADI_DIRECTIVAS_SIN_NNA_202111_REG_33065_20230724.csv" data-path="W:\11_CONADI\04_DATOS\CONADI_DIRECTIVAS_SIN_NNA_202111_REG_33065_20230724.csv" data-cols="REGION PROVINCIA COMUNA OFICINA_CONADI N_PERSONALIDAD_JURIDICA TIPO_AGRUPACION NOMBRE_AGRUPACION SECTOR TIPO_SECTOR FECHA_CONSTITUCION FECHA_RENOVACION_DIRECTIVA EMAIL_CONTACTO FONO_CONTACTO CARGO RUN DV A_PATERNO A_MATERNO NOMBRE ARCHIVO FECHA_ARCH EDAD FECHA_DEFUN ">
+        <div class="dataset-header" onclick="toggleDataset(this)">
+          <div>
+            <span class="dataset-name">CONADI_DIRECTIVAS_SIN_NNA_202111_REG_33065_20230724.csv</span>
+            <div class="dataset-meta">W:\11_CONADI\04_DATOS\CONADI_DIRECTIVAS_SIN_NNA_202111_REG_33065_20230724.csv · .csv · 33066 filas · 23 columnas</div>
+          </div>
+          <div>
+            <span class="badge">.csv</span>
+            
+            <span class="badge">ACL</span>
+            <span class="badge badge-warn">12 reglas</span>
+          </div>
+        </div>
+        <div class="dataset-body">
+          <table class="cols-table">
+            <thead><tr><th>Columna</th><th>Tipo</th><th>Nulos %</th><th>Max length</th></tr></thead>
+            <tbody>
+              
+              <tr><td><strong>REGION</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>11</td></tr>
+              
+              <tr><td><strong>PROVINCIA</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>11</td></tr>
+              
+              <tr><td><strong>COMUNA</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>11</td></tr>
+              
+              <tr><td><strong>OFICINA_CONADI</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>26</td></tr>
+              
+              <tr><td><strong>N_PERSONALIDAD_JURIDICA</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>3</td></tr>
+              
+              <tr><td><strong>TIPO_AGRUPACION</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>19</td></tr>
+              
+              <tr><td><strong>NOMBRE_AGRUPACION</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>88</td></tr>
+              
+              <tr><td><strong>SECTOR</strong></td><td><span class="badge">string</span></td><td>22.00</td><td>24</td></tr>
+              
+              <tr><td><strong>TIPO_SECTOR</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>6</td></tr>
+              
+              <tr><td><strong>FECHA_CONSTITUCION</strong></td><td><span class="badge">datetime</span></td><td>0.00</td><td>23</td></tr>
+              
+              <tr><td><strong>FECHA_RENOVACION_DIRECTIVA</strong></td><td><span class="badge">datetime</span></td><td>0.00</td><td>23</td></tr>
+              
+              <tr><td><strong>EMAIL_CONTACTO</strong></td><td><span class="badge">email</span></td><td>88.00</td><td>28</td></tr>
+              
+              <tr><td><strong>FONO_CONTACTO</strong></td><td><span class="badge">phone</span></td><td>48.50</td><td>18</td></tr>
+              
+              <tr><td><strong>CARGO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>14</td></tr>
+              
+              <tr><td><strong>RUN</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>DV</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>1</td></tr>
+              
+              <tr><td><strong>A_PATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>12</td></tr>
+              
+              <tr><td><strong>A_MATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>12</td></tr>
+              
+              <tr><td><strong>NOMBRE</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>27</td></tr>
+              
+              <tr><td><strong>ARCHIVO</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>69</td></tr>
+              
+              <tr><td><strong>FECHA_ARCH</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>EDAD</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>2</td></tr>
+              
+              <tr><td><strong>FECHA_DEFUN</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>8</td></tr>
+              
+            </tbody>
+          </table>
+          
+          <div class="rules-list">
+            <strong>Reglas:</strong>
+            
+            <div class="rule">encoding_not_utf8 (warning)</div>
+            
+            <div class="rule">potential_sensitive_data → REGION (info)</div>
+            
+            <div class="rule">potential_sensitive_data → COMUNA (info)</div>
+            
+            <div class="rule">potential_sensitive_data → TIPO_SECTOR (info)</div>
+            
+            <div class="rule">high_null_ratio → EMAIL_CONTACTO (warning)</div>
+            
+            <div class="rule">potential_sensitive_data → EMAIL_CONTACTO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → FONO_CONTACTO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → CARGO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → RUN (info)</div>
+            
+            <div class="rule">potential_sensitive_data → A_PATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → A_MATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → FECHA_ARCH (info)</div>
+            
+          </div>
+          
+          <div class="gov-flags">
+            
+            <span class="gov-flag">✓ ACL</span>
+            <span class="gov-flag">Muestras ocultas (gobierno)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dataset" data-name="CONADI_CALIDADES_SIN_NNA_202305_REG_778934_20230724.csv" data-path="W:\11_CONADI\04_DATOS\CONADI_CALIDADES_SIN_NNA_202305_REG_778934_20230724.csv" data-cols="RUN DV NOMBRES APELLIDO_PATERNO APELLIDO_MATERNO PUEBLO_ORIGINARIO NUMERO_CERTIFICADO ESTADO_JURIDICO FECHA_NACI EDAD FECHA_DEFUN ">
+        <div class="dataset-header" onclick="toggleDataset(this)">
+          <div>
+            <span class="dataset-name">CONADI_CALIDADES_SIN_NNA_202305_REG_778934_20230724.csv</span>
+            <div class="dataset-meta">W:\11_CONADI\04_DATOS\CONADI_CALIDADES_SIN_NNA_202305_REG_778934_20230724.csv · .csv · 778935 filas · 11 columnas</div>
+          </div>
+          <div>
+            <span class="badge">.csv</span>
+            
+            <span class="badge">ACL</span>
+            <span class="badge badge-warn">7 reglas</span>
+          </div>
+        </div>
+        <div class="dataset-body">
+          <table class="cols-table">
+            <thead><tr><th>Columna</th><th>Tipo</th><th>Nulos %</th><th>Max length</th></tr></thead>
+            <tbody>
+              
+              <tr><td><strong>RUN</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>DV</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>1</td></tr>
+              
+              <tr><td><strong>NOMBRES</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>27</td></tr>
+              
+              <tr><td><strong>APELLIDO_PATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>12</td></tr>
+              
+              <tr><td><strong>APELLIDO_MATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>11</td></tr>
+              
+              <tr><td><strong>PUEBLO_ORIGINARIO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>9</td></tr>
+              
+              <tr><td><strong>NUMERO_CERTIFICADO</strong></td><td><span class="badge">integer</span></td><td>1.50</td><td>7</td></tr>
+              
+              <tr><td><strong>ESTADO_JURIDICO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>9</td></tr>
+              
+              <tr><td><strong>FECHA_NACI</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>EDAD</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>2</td></tr>
+              
+              <tr><td><strong>FECHA_DEFUN</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>1</td></tr>
+              
+            </tbody>
+          </table>
+          
+          <div class="rules-list">
+            <strong>Reglas:</strong>
+            
+            <div class="rule">encoding_not_utf8 (warning)</div>
+            
+            <div class="rule">potential_sensitive_data → RUN (info)</div>
+            
+            <div class="rule">potential_sensitive_data → APELLIDO_PATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → APELLIDO_MATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → PUEBLO_ORIGINARIO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → ESTADO_JURIDICO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → FECHA_NACI (info)</div>
+            
+          </div>
+          
+          <div class="gov-flags">
+            
+            <span class="gov-flag">✓ ACL</span>
+            <span class="gov-flag">Muestras ocultas (gobierno)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dataset" data-name="_CONADI_CALIDADES_SIN_MENORES_202305_REG_778934_20230724.csv" data-path="W:\11_CONADI\04_DATOS\old\_CONADI_CALIDADES_SIN_MENORES_202305_REG_778934_20230724.csv" data-cols="RUN DV FECHA_NACI EDAD FECHA_DEFUN NOMBRES APELLIDO_PATERNO APELLIDO_MATERNO PUEBLO_ORIGINARIO NUMERO_CERTIFICADO ESTADO_JURIDICO ">
+        <div class="dataset-header" onclick="toggleDataset(this)">
+          <div>
+            <span class="dataset-name">_CONADI_CALIDADES_SIN_MENORES_202305_REG_778934_20230724.csv</span>
+            <div class="dataset-meta">W:\11_CONADI\04_DATOS\old\_CONADI_CALIDADES_SIN_MENORES_202305_REG_778934_20230724.csv · .csv · 778935 filas · 11 columnas</div>
+          </div>
+          <div>
+            <span class="badge">.csv</span>
+            
+            <span class="badge">ACL</span>
+            <span class="badge badge-warn">7 reglas</span>
+          </div>
+        </div>
+        <div class="dataset-body">
+          <table class="cols-table">
+            <thead><tr><th>Columna</th><th>Tipo</th><th>Nulos %</th><th>Max length</th></tr></thead>
+            <tbody>
+              
+              <tr><td><strong>RUN</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>DV</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>1</td></tr>
+              
+              <tr><td><strong>FECHA_NACI</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>EDAD</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>2</td></tr>
+              
+              <tr><td><strong>FECHA_DEFUN</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>1</td></tr>
+              
+              <tr><td><strong>NOMBRES</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>27</td></tr>
+              
+              <tr><td><strong>APELLIDO_PATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>12</td></tr>
+              
+              <tr><td><strong>APELLIDO_MATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>11</td></tr>
+              
+              <tr><td><strong>PUEBLO_ORIGINARIO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>9</td></tr>
+              
+              <tr><td><strong>NUMERO_CERTIFICADO</strong></td><td><span class="badge">integer</span></td><td>1.50</td><td>6</td></tr>
+              
+              <tr><td><strong>ESTADO_JURIDICO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>9</td></tr>
+              
+            </tbody>
+          </table>
+          
+          <div class="rules-list">
+            <strong>Reglas:</strong>
+            
+            <div class="rule">encoding_not_utf8 (warning)</div>
+            
+            <div class="rule">potential_sensitive_data → RUN (info)</div>
+            
+            <div class="rule">potential_sensitive_data → FECHA_NACI (info)</div>
+            
+            <div class="rule">potential_sensitive_data → APELLIDO_PATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → APELLIDO_MATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → PUEBLO_ORIGINARIO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → ESTADO_JURIDICO (info)</div>
+            
+          </div>
+          
+          <div class="gov-flags">
+            
+            <span class="gov-flag">✓ ACL</span>
+            <span class="gov-flag">Muestras ocultas (gobierno)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dataset" data-name="__CONADI_SIN_MENORES_202305_REG_778934_20230724.csv" data-path="W:\11_CONADI\04_DATOS\old\__CONADI_SIN_MENORES_202305_REG_778934_20230724.csv" data-cols="RUN FECHA_NACI EDAD FECHA_DEFUN DV NOMBRES APELLIDO_PATERNO APELLIDO_MATERNO PUEBLO_ORIGINARIO NUMERO_CERTIFICADO ESTADO_JURIDICO ">
+        <div class="dataset-header" onclick="toggleDataset(this)">
+          <div>
+            <span class="dataset-name">__CONADI_SIN_MENORES_202305_REG_778934_20230724.csv</span>
+            <div class="dataset-meta">W:\11_CONADI\04_DATOS\old\__CONADI_SIN_MENORES_202305_REG_778934_20230724.csv · .csv · 778935 filas · 11 columnas</div>
+          </div>
+          <div>
+            <span class="badge">.csv</span>
+            
+            <span class="badge">ACL</span>
+            <span class="badge badge-warn">6 reglas</span>
+          </div>
+        </div>
+        <div class="dataset-body">
+          <table class="cols-table">
+            <thead><tr><th>Columna</th><th>Tipo</th><th>Nulos %</th><th>Max length</th></tr></thead>
+            <tbody>
+              
+              <tr><td><strong>RUN</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>FECHA_NACI</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>EDAD</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>2</td></tr>
+              
+              <tr><td><strong>FECHA_DEFUN</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>1</td></tr>
+              
+              <tr><td><strong>DV</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>1</td></tr>
+              
+              <tr><td><strong>NOMBRES</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>29</td></tr>
+              
+              <tr><td><strong>APELLIDO_PATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>12</td></tr>
+              
+              <tr><td><strong>APELLIDO_MATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>12</td></tr>
+              
+              <tr><td><strong>PUEBLO_ORIGINARIO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>10</td></tr>
+              
+              <tr><td><strong>NUMERO_CERTIFICADO</strong></td><td><span class="badge">integer</span></td><td>1.50</td><td>7</td></tr>
+              
+              <tr><td><strong>ESTADO_JURIDICO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>9</td></tr>
+              
+            </tbody>
+          </table>
+          
+          <div class="rules-list">
+            <strong>Reglas:</strong>
+            
+            <div class="rule">potential_sensitive_data → RUN (info)</div>
+            
+            <div class="rule">potential_sensitive_data → FECHA_NACI (info)</div>
+            
+            <div class="rule">potential_sensitive_data → APELLIDO_PATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → APELLIDO_MATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → PUEBLO_ORIGINARIO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → ESTADO_JURIDICO (info)</div>
+            
+          </div>
+          
+          <div class="gov-flags">
+            
+            <span class="gov-flag">✓ ACL</span>
+            <span class="gov-flag">Muestras ocultas (gobierno)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dataset" data-name="CONADI_SOCIOS_SIN_NNA_202111_REG_294987_20230724.csv" data-path="W:\11_CONADI\04_DATOS\CONADI_SOCIOS_SIN_NNA_202111_REG_294987_20230724.csv" data-cols="REGION PROVINCIA COMUNA OFICINA_CONADI N_PERSONALIDA_JURIDICA TIPO_AGRUPACION NOMBRE_AGRUPACION SECTOR TIPO_SECTOR FECHA_CONSTITUCION FECHA_RENOVACI�N_DIRECTIVA EMAIL_CONTACTO FONO_CONTACTO RUN DV A_PATERNO A_MATERNO NOMBRE ARCHIVO FECHA_ARCH EDAD FECHA_DEFUN ">
+        <div class="dataset-header" onclick="toggleDataset(this)">
+          <div>
+            <span class="dataset-name">CONADI_SOCIOS_SIN_NNA_202111_REG_294987_20230724.csv</span>
+            <div class="dataset-meta">W:\11_CONADI\04_DATOS\CONADI_SOCIOS_SIN_NNA_202111_REG_294987_20230724.csv · .csv · 294988 filas · 22 columnas</div>
+          </div>
+          <div>
+            <span class="badge">.csv</span>
+            
+            <span class="badge">ACL</span>
+            <span class="badge badge-warn">8 reglas</span>
+          </div>
+        </div>
+        <div class="dataset-body">
+          <table class="cols-table">
+            <thead><tr><th>Columna</th><th>Tipo</th><th>Nulos %</th><th>Max length</th></tr></thead>
+            <tbody>
+              
+              <tr><td><strong>REGION</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>41</td></tr>
+              
+              <tr><td><strong>PROVINCIA</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>16</td></tr>
+              
+              <tr><td><strong>COMUNA</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>20</td></tr>
+              
+              <tr><td><strong>OFICINA_CONADI</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>36</td></tr>
+              
+              <tr><td><strong>N_PERSONALIDA_JURIDICA</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>4</td></tr>
+              
+              <tr><td><strong>TIPO_AGRUPACION</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>19</td></tr>
+              
+              <tr><td><strong>NOMBRE_AGRUPACION</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>84</td></tr>
+              
+              <tr><td><strong>SECTOR</strong></td><td><span class="badge">string</span></td><td>31.00</td><td>46</td></tr>
+              
+              <tr><td><strong>TIPO_SECTOR</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>6</td></tr>
+              
+              <tr><td><strong>FECHA_CONSTITUCION</strong></td><td><span class="badge">datetime</span></td><td>0.00</td><td>23</td></tr>
+              
+              <tr><td><strong>FECHA_RENOVACI�N_DIRECTIVA</strong></td><td><span class="badge">datetime</span></td><td>0.00</td><td>23</td></tr>
+              
+              <tr><td><strong>EMAIL_CONTACTO</strong></td><td><span class="badge">email</span></td><td>78.00</td><td>35</td></tr>
+              
+              <tr><td><strong>FONO_CONTACTO</strong></td><td><span class="badge">phone</span></td><td>13.50</td><td>81</td></tr>
+              
+              <tr><td><strong>RUN</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>DV</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>1</td></tr>
+              
+              <tr><td><strong>A_PATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>12</td></tr>
+              
+              <tr><td><strong>A_MATERNO</strong></td><td><span class="badge">id_like</span></td><td>0.00</td><td>13</td></tr>
+              
+              <tr><td><strong>NOMBRE</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>23</td></tr>
+              
+              <tr><td><strong>ARCHIVO</strong></td><td><span class="badge">string</span></td><td>0.00</td><td>65</td></tr>
+              
+              <tr><td><strong>FECHA_ARCH</strong></td><td><span class="badge">phone</span></td><td>0.00</td><td>8</td></tr>
+              
+              <tr><td><strong>EDAD</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>2</td></tr>
+              
+              <tr><td><strong>FECHA_DEFUN</strong></td><td><span class="badge">integer</span></td><td>0.00</td><td>8</td></tr>
+              
+            </tbody>
+          </table>
+          
+          <div class="rules-list">
+            <strong>Reglas:</strong>
+            
+            <div class="rule">encoding_not_utf8 (warning)</div>
+            
+            <div class="rule">high_null_ratio → EMAIL_CONTACTO (warning)</div>
+            
+            <div class="rule">potential_sensitive_data → EMAIL_CONTACTO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → FONO_CONTACTO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → RUN (info)</div>
+            
+            <div class="rule">potential_sensitive_data → A_PATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → A_MATERNO (info)</div>
+            
+            <div class="rule">potential_sensitive_data → FECHA_ARCH (info)</div>
+            
+          </div>
+          
+          <div class="gov-flags">
+            
+            <span class="gov-flag">✓ ACL</span>
+            <span class="gov-flag">Muestras ocultas (gobierno)</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script>
+    function toggleDataset(header) {
+      const body = header.nextElementSibling;
+      body.classList.toggle('open');
+    }
+    function filterCatalog() {
+      const q = document.getElementById('search').value.toLowerCase();
+      document.querySelectorAll('.dataset').forEach(el => {
+        const name = (el.dataset.name || '').toLowerCase();
+        const path = (el.dataset.path || '').toLowerCase();
+        const cols = (el.dataset.cols || '').toLowerCase();
+        const match = !q || name.includes(q) || path.includes(q) || cols.includes(q);
+        el.style.display = match ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

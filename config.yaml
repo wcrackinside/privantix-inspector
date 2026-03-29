@@ -1,0 +1,16 @@
+supported_extensions:
+  - .csv
+  - .txt
+  - .tsv
+  - .xlsx
+  - .rdat
+  - .dat
+  - .parquet
+  - .7z
+  - .zip
+  - .rar
+max_sample_rows: 200
+workers: 4
+# recursive_archives: false  # process nested archives (ZIP/7z/RAR inside archives)
+# incremental: false        # only analyze files modified since last run
+# hide_sample_values: true  # omit sample_values from output (for data governance)

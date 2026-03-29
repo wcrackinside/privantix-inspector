@@ -1,0 +1,1256 @@
+{
+  "generated_at": "2026-03-07T00:33:42.8864455-03:00",
+  "source_path": "W:\\11_CONADI\\04_DATOS",
+  "source_run": "2026-03-06 11:14:54",
+  "total_datasets": 6,
+  "total_columns": 105,
+  "total_rules": 51,
+  "datasets": [
+    {
+      "path": "W:\\11_CONADI\\04_DATOS\\CONADI_AGRUPACIONES_202204_REG_8189_20230724.csv",
+      "name": "CONADI_AGRUPACIONES_202204_REG_8189_20230724.csv",
+      "extension": ".csv",
+      "size_bytes": 3383013,
+      "modified_at": "2023-07-24T22:26:37.5622877-04:00",
+      "depth": 0,
+      "owner": "MDP\\carce",
+      "permissions": "-rw-rw-rw-",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "has_header": true,
+      "row_count_estimate": 8190,
+      "column_count": 27,
+      "average_row_width": 411,
+      "has_acls": true,
+      "columns": [
+        {
+          "name": "REGION",
+          "position": 1,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 18,
+          "has_samples": false
+        },
+        {
+          "name": "PROVINCIA",
+          "position": 2,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 11,
+          "has_samples": false
+        },
+        {
+          "name": "COMUNA",
+          "position": 3,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 20,
+          "has_samples": false
+        },
+        {
+          "name": "OFICINA_CONADI",
+          "position": 4,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 36,
+          "has_samples": false
+        },
+        {
+          "name": "N_PERSONALIDAD_JURIDICA",
+          "position": 5,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 3,
+          "has_samples": false
+        },
+        {
+          "name": "TIPO_AGRUPACION",
+          "position": 6,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 19,
+          "has_samples": false
+        },
+        {
+          "name": "NOMBRE",
+          "position": 7,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 112,
+          "has_samples": false
+        },
+        {
+          "name": "SECTOR",
+          "position": 8,
+          "inferred_type": "string",
+          "null_percentage": 0.5,
+          "max_length": 102,
+          "has_samples": false
+        },
+        {
+          "name": "TIPO_SECTOR",
+          "position": 9,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 6,
+          "has_samples": false
+        },
+        {
+          "name": "N_FOLIO",
+          "position": 10,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 39,
+          "has_samples": false
+        },
+        {
+          "name": "N_FAMILIAS",
+          "position": 11,
+          "inferred_type": "integer",
+          "null_percentage": 22.5,
+          "max_length": 3,
+          "has_samples": false
+        },
+        {
+          "name": "N_SOCIOS",
+          "position": 12,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 3,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_CONSTITUCION",
+          "position": 13,
+          "inferred_type": "datetime",
+          "null_percentage": 0,
+          "max_length": 20,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_RENOVACION_DIRECTIVA",
+          "position": 14,
+          "inferred_type": "datetime",
+          "null_percentage": 0,
+          "max_length": 20,
+          "has_samples": false
+        },
+        {
+          "name": "ESTADO_DIRECTIVA",
+          "position": 15,
+          "inferred_type": "string",
+          "null_percentage": 100,
+          "max_length": 0,
+          "has_samples": false
+        },
+        {
+          "name": "DIRECCION_POSTAL",
+          "position": 16,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 248,
+          "has_samples": false
+        },
+        {
+          "name": "OBSERVACION",
+          "position": 17,
+          "inferred_type": "string",
+          "null_percentage": 28.499999999999996,
+          "max_length": 521,
+          "has_samples": false
+        },
+        {
+          "name": "ESPACIO_TERRITORIAL",
+          "position": 18,
+          "inferred_type": "string",
+          "null_percentage": 11,
+          "max_length": 36,
+          "has_samples": false
+        },
+        {
+          "name": "INFORME_JURIDICO",
+          "position": 19,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 2,
+          "has_samples": false
+        },
+        {
+          "name": "EMAIL_CONTACTO",
+          "position": 20,
+          "inferred_type": "email",
+          "null_percentage": 69.5,
+          "max_length": 37,
+          "has_samples": false
+        },
+        {
+          "name": "FONO_CONTACTO",
+          "position": 21,
+          "inferred_type": "phone",
+          "null_percentage": 30,
+          "max_length": 61,
+          "has_samples": false
+        },
+        {
+          "name": "RUT_AGRUPACION",
+          "position": 22,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "DV",
+          "position": 23,
+          "inferred_type": "integer",
+          "null_percentage": 14.499999999999998,
+          "max_length": 1,
+          "has_samples": false
+        },
+        {
+          "name": "PUEBLO_ORIGINARIO",
+          "position": 24,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 13,
+          "has_samples": false
+        },
+        {
+          "name": "ESTADO_P_J",
+          "position": 25,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 10,
+          "has_samples": false
+        },
+        {
+          "name": "ARCHIVO",
+          "position": 26,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 61,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_ARCH",
+          "position": 27,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        }
+      ],
+      "rules_triggered": [
+        {
+          "rule_name": "encoding_not_utf8",
+          "severity": "warning"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "REGION"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "COMUNA"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "TIPO_SECTOR"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "N_FOLIO"
+        },
+        {
+          "rule_name": "high_null_ratio",
+          "severity": "warning",
+          "target": "ESTADO_DIRECTIVA"
+        },
+        {
+          "rule_name": "high_null_ratio",
+          "severity": "warning",
+          "target": "EMAIL_CONTACTO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "EMAIL_CONTACTO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "FONO_CONTACTO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "ESTADO_P_J"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "FECHA_ARCH"
+        }
+      ],
+      "governance": {
+        "has_checksum": false,
+        "has_acls": true,
+        "samples_hidden": true
+      }
+    },
+    {
+      "path": "W:\\11_CONADI\\04_DATOS\\CONADI_DIRECTIVAS_SIN_NNA_202111_REG_33065_20230724.csv",
+      "name": "CONADI_DIRECTIVAS_SIN_NNA_202111_REG_33065_20230724.csv",
+      "extension": ".csv",
+      "size_bytes": 10981631,
+      "modified_at": "2023-07-24T22:27:22.281206-04:00",
+      "depth": 0,
+      "owner": "MDP\\carce",
+      "permissions": "-rw-rw-rw-",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "has_header": true,
+      "row_count_estimate": 33066,
+      "column_count": 23,
+      "average_row_width": 330,
+      "has_acls": true,
+      "columns": [
+        {
+          "name": "REGION",
+          "position": 1,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 11,
+          "has_samples": false
+        },
+        {
+          "name": "PROVINCIA",
+          "position": 2,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 11,
+          "has_samples": false
+        },
+        {
+          "name": "COMUNA",
+          "position": 3,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 11,
+          "has_samples": false
+        },
+        {
+          "name": "OFICINA_CONADI",
+          "position": 4,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 26,
+          "has_samples": false
+        },
+        {
+          "name": "N_PERSONALIDAD_JURIDICA",
+          "position": 5,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 3,
+          "has_samples": false
+        },
+        {
+          "name": "TIPO_AGRUPACION",
+          "position": 6,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 19,
+          "has_samples": false
+        },
+        {
+          "name": "NOMBRE_AGRUPACION",
+          "position": 7,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 88,
+          "has_samples": false
+        },
+        {
+          "name": "SECTOR",
+          "position": 8,
+          "inferred_type": "string",
+          "null_percentage": 22,
+          "max_length": 24,
+          "has_samples": false
+        },
+        {
+          "name": "TIPO_SECTOR",
+          "position": 9,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 6,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_CONSTITUCION",
+          "position": 10,
+          "inferred_type": "datetime",
+          "null_percentage": 0,
+          "max_length": 23,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_RENOVACION_DIRECTIVA",
+          "position": 11,
+          "inferred_type": "datetime",
+          "null_percentage": 0,
+          "max_length": 23,
+          "has_samples": false
+        },
+        {
+          "name": "EMAIL_CONTACTO",
+          "position": 12,
+          "inferred_type": "email",
+          "null_percentage": 88,
+          "max_length": 28,
+          "has_samples": false
+        },
+        {
+          "name": "FONO_CONTACTO",
+          "position": 13,
+          "inferred_type": "phone",
+          "null_percentage": 48.5,
+          "max_length": 18,
+          "has_samples": false
+        },
+        {
+          "name": "CARGO",
+          "position": 14,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 14,
+          "has_samples": false
+        },
+        {
+          "name": "RUN",
+          "position": 15,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "DV",
+          "position": 16,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 1,
+          "has_samples": false
+        },
+        {
+          "name": "A_PATERNO",
+          "position": 17,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 12,
+          "has_samples": false
+        },
+        {
+          "name": "A_MATERNO",
+          "position": 18,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 12,
+          "has_samples": false
+        },
+        {
+          "name": "NOMBRE",
+          "position": 19,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 27,
+          "has_samples": false
+        },
+        {
+          "name": "ARCHIVO",
+          "position": 20,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 69,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_ARCH",
+          "position": 21,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "EDAD",
+          "position": 22,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 2,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_DEFUN",
+          "position": 23,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        }
+      ],
+      "rules_triggered": [
+        {
+          "rule_name": "encoding_not_utf8",
+          "severity": "warning"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "REGION"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "COMUNA"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "TIPO_SECTOR"
+        },
+        {
+          "rule_name": "high_null_ratio",
+          "severity": "warning",
+          "target": "EMAIL_CONTACTO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "EMAIL_CONTACTO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "FONO_CONTACTO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "CARGO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "RUN"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "A_PATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "A_MATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "FECHA_ARCH"
+        }
+      ],
+      "governance": {
+        "has_checksum": false,
+        "has_acls": true,
+        "samples_hidden": true
+      }
+    },
+    {
+      "path": "W:\\11_CONADI\\04_DATOS\\CONADI_CALIDADES_SIN_NNA_202305_REG_778934_20230724.csv",
+      "name": "CONADI_CALIDADES_SIN_NNA_202305_REG_778934_20230724.csv",
+      "extension": ".csv",
+      "size_bytes": 65722285,
+      "modified_at": "2023-07-24T22:26:08.4059275-04:00",
+      "depth": 0,
+      "owner": "MDP\\carce",
+      "permissions": "-rw-rw-rw-",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "has_header": true,
+      "row_count_estimate": 778935,
+      "column_count": 11,
+      "average_row_width": 82,
+      "has_acls": true,
+      "columns": [
+        {
+          "name": "RUN",
+          "position": 1,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "DV",
+          "position": 2,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 1,
+          "has_samples": false
+        },
+        {
+          "name": "NOMBRES",
+          "position": 3,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 27,
+          "has_samples": false
+        },
+        {
+          "name": "APELLIDO_PATERNO",
+          "position": 4,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 12,
+          "has_samples": false
+        },
+        {
+          "name": "APELLIDO_MATERNO",
+          "position": 5,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 11,
+          "has_samples": false
+        },
+        {
+          "name": "PUEBLO_ORIGINARIO",
+          "position": 6,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 9,
+          "has_samples": false
+        },
+        {
+          "name": "NUMERO_CERTIFICADO",
+          "position": 7,
+          "inferred_type": "integer",
+          "null_percentage": 1.5,
+          "max_length": 7,
+          "has_samples": false
+        },
+        {
+          "name": "ESTADO_JURIDICO",
+          "position": 8,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 9,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_NACI",
+          "position": 9,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "EDAD",
+          "position": 10,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 2,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_DEFUN",
+          "position": 11,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 1,
+          "has_samples": false
+        }
+      ],
+      "rules_triggered": [
+        {
+          "rule_name": "encoding_not_utf8",
+          "severity": "warning"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "RUN"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "APELLIDO_PATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "APELLIDO_MATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "PUEBLO_ORIGINARIO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "ESTADO_JURIDICO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "FECHA_NACI"
+        }
+      ],
+      "governance": {
+        "has_checksum": false,
+        "has_acls": true,
+        "samples_hidden": true
+      }
+    },
+    {
+      "path": "W:\\11_CONADI\\04_DATOS\\old\\_CONADI_CALIDADES_SIN_MENORES_202305_REG_778934_20230724.csv",
+      "name": "_CONADI_CALIDADES_SIN_MENORES_202305_REG_778934_20230724.csv",
+      "extension": ".csv",
+      "size_bytes": 62739860,
+      "modified_at": "2023-07-24T20:19:34.7650839-04:00",
+      "depth": 1,
+      "owner": "MDP\\vacha",
+      "permissions": "-rw-rw-rw-",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "has_header": true,
+      "row_count_estimate": 778935,
+      "column_count": 11,
+      "average_row_width": 78,
+      "has_acls": true,
+      "columns": [
+        {
+          "name": "RUN",
+          "position": 1,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "DV",
+          "position": 2,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 1,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_NACI",
+          "position": 3,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "EDAD",
+          "position": 4,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 2,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_DEFUN",
+          "position": 5,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 1,
+          "has_samples": false
+        },
+        {
+          "name": "NOMBRES",
+          "position": 6,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 27,
+          "has_samples": false
+        },
+        {
+          "name": "APELLIDO_PATERNO",
+          "position": 7,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 12,
+          "has_samples": false
+        },
+        {
+          "name": "APELLIDO_MATERNO",
+          "position": 8,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 11,
+          "has_samples": false
+        },
+        {
+          "name": "PUEBLO_ORIGINARIO",
+          "position": 9,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 9,
+          "has_samples": false
+        },
+        {
+          "name": "NUMERO_CERTIFICADO",
+          "position": 10,
+          "inferred_type": "integer",
+          "null_percentage": 1.5,
+          "max_length": 6,
+          "has_samples": false
+        },
+        {
+          "name": "ESTADO_JURIDICO",
+          "position": 11,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 9,
+          "has_samples": false
+        }
+      ],
+      "rules_triggered": [
+        {
+          "rule_name": "encoding_not_utf8",
+          "severity": "warning"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "RUN"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "FECHA_NACI"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "APELLIDO_PATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "APELLIDO_MATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "PUEBLO_ORIGINARIO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "ESTADO_JURIDICO"
+        }
+      ],
+      "governance": {
+        "has_checksum": false,
+        "has_acls": true,
+        "samples_hidden": true
+      }
+    },
+    {
+      "path": "W:\\11_CONADI\\04_DATOS\\old\\__CONADI_SIN_MENORES_202305_REG_778934_20230724.csv",
+      "name": "__CONADI_SIN_MENORES_202305_REG_778934_20230724.csv",
+      "extension": ".csv",
+      "size_bytes": 66344068,
+      "modified_at": "2023-07-24T17:08:04.2893983-04:00",
+      "depth": 1,
+      "owner": "MDP\\carce",
+      "permissions": "-rw-rw-rw-",
+      "encoding": "utf-8",
+      "delimiter": ";",
+      "has_header": true,
+      "row_count_estimate": 778935,
+      "column_count": 11,
+      "average_row_width": 83,
+      "has_acls": true,
+      "columns": [
+        {
+          "name": "RUN",
+          "position": 1,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_NACI",
+          "position": 2,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "EDAD",
+          "position": 3,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 2,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_DEFUN",
+          "position": 4,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 1,
+          "has_samples": false
+        },
+        {
+          "name": "DV",
+          "position": 5,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 1,
+          "has_samples": false
+        },
+        {
+          "name": "NOMBRES",
+          "position": 6,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 29,
+          "has_samples": false
+        },
+        {
+          "name": "APELLIDO_PATERNO",
+          "position": 7,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 12,
+          "has_samples": false
+        },
+        {
+          "name": "APELLIDO_MATERNO",
+          "position": 8,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 12,
+          "has_samples": false
+        },
+        {
+          "name": "PUEBLO_ORIGINARIO",
+          "position": 9,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 10,
+          "has_samples": false
+        },
+        {
+          "name": "NUMERO_CERTIFICADO",
+          "position": 10,
+          "inferred_type": "integer",
+          "null_percentage": 1.5,
+          "max_length": 7,
+          "has_samples": false
+        },
+        {
+          "name": "ESTADO_JURIDICO",
+          "position": 11,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 9,
+          "has_samples": false
+        }
+      ],
+      "rules_triggered": [
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "RUN"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "FECHA_NACI"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "APELLIDO_PATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "APELLIDO_MATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "PUEBLO_ORIGINARIO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "ESTADO_JURIDICO"
+        }
+      ],
+      "governance": {
+        "has_checksum": false,
+        "has_acls": true,
+        "samples_hidden": true
+      }
+    },
+    {
+      "path": "W:\\11_CONADI\\04_DATOS\\CONADI_SOCIOS_SIN_NNA_202111_REG_294987_20230724.csv",
+      "name": "CONADI_SOCIOS_SIN_NNA_202111_REG_294987_20230724.csv",
+      "extension": ".csv",
+      "size_bytes": 93230225,
+      "modified_at": "2023-07-24T22:26:54.2654759-04:00",
+      "depth": 0,
+      "owner": "MDP\\carce",
+      "permissions": "-rw-rw-rw-",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "has_header": true,
+      "row_count_estimate": 294988,
+      "column_count": 22,
+      "average_row_width": 314,
+      "has_acls": true,
+      "columns": [
+        {
+          "name": "REGION",
+          "position": 1,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 41,
+          "has_samples": false
+        },
+        {
+          "name": "PROVINCIA",
+          "position": 2,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 16,
+          "has_samples": false
+        },
+        {
+          "name": "COMUNA",
+          "position": 3,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 20,
+          "has_samples": false
+        },
+        {
+          "name": "OFICINA_CONADI",
+          "position": 4,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 36,
+          "has_samples": false
+        },
+        {
+          "name": "N_PERSONALIDA_JURIDICA",
+          "position": 5,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 4,
+          "has_samples": false
+        },
+        {
+          "name": "TIPO_AGRUPACION",
+          "position": 6,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 19,
+          "has_samples": false
+        },
+        {
+          "name": "NOMBRE_AGRUPACION",
+          "position": 7,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 84,
+          "has_samples": false
+        },
+        {
+          "name": "SECTOR",
+          "position": 8,
+          "inferred_type": "string",
+          "null_percentage": 31,
+          "max_length": 46,
+          "has_samples": false
+        },
+        {
+          "name": "TIPO_SECTOR",
+          "position": 9,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 6,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_CONSTITUCION",
+          "position": 10,
+          "inferred_type": "datetime",
+          "null_percentage": 0,
+          "max_length": 23,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_RENOVACI�N_DIRECTIVA",
+          "position": 11,
+          "inferred_type": "datetime",
+          "null_percentage": 0,
+          "max_length": 23,
+          "has_samples": false
+        },
+        {
+          "name": "EMAIL_CONTACTO",
+          "position": 12,
+          "inferred_type": "email",
+          "null_percentage": 78,
+          "max_length": 35,
+          "has_samples": false
+        },
+        {
+          "name": "FONO_CONTACTO",
+          "position": 13,
+          "inferred_type": "phone",
+          "null_percentage": 13.5,
+          "max_length": 81,
+          "has_samples": false
+        },
+        {
+          "name": "RUN",
+          "position": 14,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "DV",
+          "position": 15,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 1,
+          "has_samples": false
+        },
+        {
+          "name": "A_PATERNO",
+          "position": 16,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 12,
+          "has_samples": false
+        },
+        {
+          "name": "A_MATERNO",
+          "position": 17,
+          "inferred_type": "id_like",
+          "null_percentage": 0,
+          "max_length": 13,
+          "has_samples": false
+        },
+        {
+          "name": "NOMBRE",
+          "position": 18,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 23,
+          "has_samples": false
+        },
+        {
+          "name": "ARCHIVO",
+          "position": 19,
+          "inferred_type": "string",
+          "null_percentage": 0,
+          "max_length": 65,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_ARCH",
+          "position": 20,
+          "inferred_type": "phone",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        },
+        {
+          "name": "EDAD",
+          "position": 21,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 2,
+          "has_samples": false
+        },
+        {
+          "name": "FECHA_DEFUN",
+          "position": 22,
+          "inferred_type": "integer",
+          "null_percentage": 0,
+          "max_length": 8,
+          "has_samples": false
+        }
+      ],
+      "rules_triggered": [
+        {
+          "rule_name": "encoding_not_utf8",
+          "severity": "warning"
+        },
+        {
+          "rule_name": "high_null_ratio",
+          "severity": "warning",
+          "target": "EMAIL_CONTACTO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "EMAIL_CONTACTO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "FONO_CONTACTO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "RUN"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "A_PATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "A_MATERNO"
+        },
+        {
+          "rule_name": "potential_sensitive_data",
+          "severity": "info",
+          "target": "FECHA_ARCH"
+        }
+      ],
+      "governance": {
+        "has_checksum": false,
+        "has_acls": true,
+        "samples_hidden": true
+      }
+    }
+  ]
+}

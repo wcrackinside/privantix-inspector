@@ -1,0 +1,32 @@
+{
+  "groups": [{
+		"name": "jupyter",
+		"members": ["MDP\\jupytersipi"]
+	},
+    {"name": "dais",
+      "members": [
+        "MDP\\ASermeno",
+        "MDP\\hmacuna",
+        "MDP\\jsepulveda",
+        "MDP\\icazor",
+        "MDP\\dolivera",
+        "MDP\\mhuerta",
+        "MDP\\nramirezd",
+        "MDP\\hbosch",
+        "MDP\\carce",
+        "MDP\\lmenesesv",
+        "MDP\\maravena",
+        "MDP\\jeyzaguirrep",
+        "MDP\\atorres",
+        "MDP\\apardo",
+        "MDP\\srojasv",
+        "MDP\\marriagada",
+        "MDP\\acontrerasp",
+        "MDP\\nbettancourt",
+        "MDP\\hpoblete",
+        "MDP\\ftoledo",
+		"MDP\\caranguiz"
+      ]
+    }
+  ]
+}

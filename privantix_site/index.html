@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privantix — Protección de datos, privacidad y riesgo</title>
+  <meta name="description" content="Privantix: herramientas para detectar datos sensibles, reducir riesgo de exposición y apoyar el cumplimiento de privacidad." />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(11,31,59,.92); border-bottom: 1px solid rgba(255,255,255,.08);">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <span class="d-inline-flex align-items-center justify-content-center" style="width:34px;height:34px;border-radius:10px;background: rgba(255,255,255,.12);">
+        <i class="bi bi-shield-lock" aria-hidden="true"></i>
+      </span>
+      <strong>Privantix</strong>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Abrir navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link " href="product.html">Productos</a></li>
+<li class="nav-item"><a class="nav-link " href="roadmap.html">Roadmap</a></li>
+<li class="nav-item"><a class="nav-link " href="vision.html">Visión & Misión</a></li>
+<li class="nav-item"><a class="nav-link " href="open.html">Open</a></li>
+<li class="nav-item"><a class="nav-link" href="index.html#metodologias">Metodologías</a></li>
+        <li class="nav-item"><a class="nav-link " href="contact.html">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="index.html#ia">IA & Datos</a></li>
+      </ul>
+      <div class="d-flex gap-2 ms-lg-3">
+        <a class="btn btn-sm btn-outline-light" href="index.html#demo"><i class="bi bi-play-circle me-1"></i>Ver demo</a>
+        <a class="btn btn-sm btn-privantix" href="index.html#waitlist"><i class="bi bi-envelope-check me-1"></i>Lista de espera</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="pill"><i class="bi bi-shield-check" aria-hidden="true"></i>Privacidad por diseño</span>
+          <span class="pill"><i class="bi bi-diagram-3" aria-hidden="true"></i>Gobernanza de datos</span>
+          <span class="pill"><i class="bi bi-activity" aria-hidden="true"></i>Riesgo medible</span>
+        </div>
+
+        <h1 class="display-5 fw-bold" style="color: var(--px-navy);">Detecta datos sensibles, reduce riesgo y comparte información con confianza.</h1>
+        <p class="lead mt-3" style="color: var(--px-muted);">
+          <strong>Privantix</strong> es un conjunto de herramientas para <strong>descubrir</strong> información sensible (PII), <strong>evaluar</strong> riesgo de exposición y <strong>generar</strong> versiones seguras de datos y documentos.
+        </p>
+
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <a class="btn btn-lg btn-privantix" href="#waitlist"><i class="bi bi-rocket-takeoff me-2"></i>Quiero acceso temprano</a>
+          <a class="btn btn-lg btn-outline-privantix" href="product.html"><i class="bi bi-eye me-2"></i>Ver qué hace</a>
+        </div>
+
+        <p class="mt-3 mb-0" style="color: var(--px-muted); font-size: .95rem;">
+          <i class="bi bi-lock-fill me-1" aria-hidden="true"></i>Enfoque “trust-first”: ejecución local u on-premise, controles de acceso y trazabilidad.
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="hero-card p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="d-flex align-items-center gap-2">
+              <span class="icon-badge teal"><i class="bi bi-search" aria-hidden="true"></i></span>
+              <div>
+                <div class="fw-semibold">Data Risk Snapshot</div>
+                <div class="small" style="color: var(--px-muted);">Ejemplo de reporte (demo)</div>
+              </div>
+            </div>
+            <span class="badge rounded-pill badge-soft">MVP</span>
+          </div>
+
+          <div class="p-3" style="border:1px solid var(--px-border); border-radius: 1rem; background: #fff;">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="fw-semibold">Hallazgos</div>
+              <span class="tag"><i class="bi bi-clock me-1" aria-hidden="true"></i>último escaneo: hoy</span>
+            </div>
+            <div class="mt-3">
+              <div class="d-flex justify-content-between"><span class="small">Inspector — Archivos analizados</span><span class="small fw-semibold">12</span></div>
+              <div class="progress" role="progressbar" aria-label="Archivos" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 100%; background: var(--px-blue);"></div>
+              </div>
+
+              <div class="d-flex justify-content-between mt-3"><span class="small">Inspector — Columnas perfiles</span><span class="small fw-semibold">47</span></div>
+              <div class="progress" role="progressbar" aria-label="Columnas" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 70%; background: var(--px-teal);"></div>
+              </div>
+
+              <div class="d-flex justify-content-between mt-3"><span class="small">Inspector — Reglas potencial sensible</span><span class="small fw-semibold">3</span></div>
+              <div class="progress" role="progressbar" aria-label="Reglas" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 25%; background: #7C3AED;"></div>
+              </div>
+
+              <div class="d-flex justify-content-between mt-3"><span class="small">ACL Audit — Carpetas fuera de cumplimiento</span><span class="small fw-semibold">3/5</span></div>
+              <div class="progress" role="progressbar" aria-label="Cumplimiento" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 40%; background: #EF4444;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="codebox mt-3" id="demo" aria-label="Ejemplo de salida">
+<pre class="mb-0">$ privantix-inspector scan --path ./data --output ./results
+
+✔ 12 archivos analizados
+✔ 47 columnas perfiles
+⚠ 3 reglas potencial sensible (revisar)
+
+Reporte: ./results/report.html
+
+$ privantix-acl-audit --path ./repository --output ./output
+
+✔ 5 carpetas auditas
+⚠ 3 fuera de cumplimiento
+Reporte: ./output/repository_20250306.json</pre>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <span class="tag"><i class="bi bi-filetype-csv me-1" aria-hidden="true"></i>CSV</span>
+            <span class="tag"><i class="bi bi-filetype-xlsx me-1" aria-hidden="true"></i>XLSX</span>
+            <span class="tag"><i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i>Parquet</span>
+            <span class="tag"><i class="bi bi-file-zip me-1" aria-hidden="true"></i>ZIP / 7z / RAR</span>
+            <span class="tag"><i class="bi bi-folder2-open me-1" aria-hidden="true"></i>Carpetas</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <h2 class="section-title fw-bold">Empieza con Privantix Scan</h2>
+        <p class="section-subtitle mb-0">El primer producto: escaneo de PII con reportes claros y accionables.</p>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6 col-xl-3">
+        <div class="feature-card p-4">
+          <div class="icon-badge"><i class="bi bi-search" aria-hidden="true"></i></div>
+          <h5 class="mt-3">Discovery</h5>
+          <p class="mb-0" style="color: var(--px-muted);">Encuentra datos personales y sensibles en archivos, datasets y carpetas compartidas.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="feature-card p-4">
+          <div class="icon-badge teal"><i class="bi bi-graph-up" aria-hidden="true"></i></div>
+          <h5 class="mt-3">Riesgo</h5>
+          <p class="mb-0" style="color: var(--px-muted);">Prioriza lo crítico con una lectura simple del nivel de exposición.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="feature-card p-4">
+          <div class="icon-badge"><i class="bi bi-journal-check" aria-hidden="true"></i></div>
+          <h5 class="mt-3">Reporte</h5>
+          <p class="mb-0" style="color: var(--px-muted);">Reportes HTML/CSV listos para auditoría interna y trabajo en equipo.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="feature-card p-4">
+          <div class="icon-badge teal"><i class="bi bi-hdd-network" aria-hidden="true"></i></div>
+          <h5 class="mt-3">Local-first</h5>
+          <p class="mb-0" style="color: var(--px-muted);">acceso en tu entorno (local/on-premise) para mantener control de los datos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="waitlist" class="section">
+  <div class="container">
+    <div class="row g-3 align-items-stretch">
+      <div class="col-lg-7">
+        <div class="product-card p-4 p-lg-5">
+          <h2 class="fw-bold section-title">Acceso temprano a Privantix</h2>
+          <p class="section-subtitle">Únete a la lista de espera para probar <strong>Privantix Scan</strong> y recibir actualizaciones del roadmap.</p>
+
+          <form class="row g-2" onsubmit="waitlistSubmit(event)">
+            <div class="col-md-6">
+              <label class="form-label" for="nombre">Nombre</label>
+              <input class="form-control" id="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-control" id="email" type="email" placeholder="tu@correo.com" required />
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="perfil">Perfil (opcional)</label>
+              <select class="form-select" id="perfil">
+                <option value="">Selecciona…</option>
+                <option>Seguridad / Ciberseguridad</option>
+                <option>Datos / BI / Analítica</option>
+                <option>TI / Infraestructura</option>
+                <option>Compliance / Legal</option>
+                <option>Dirección / Gerencia</option>
+              </select>
+            </div>
+            <div class="col-12 mt-2">
+              <button class="btn btn-privantix btn-lg" type="submit"><i class="bi bi-envelope-paper me-2"></i>Quiero estar en la lista</button>
+              <span class="ms-2 small" style="color: var(--px-muted);">No spam. Solo lanzamientos y notas de producto.</span>
+            </div>
+          </form>
+
+          <div class="mt-4 d-flex flex-wrap gap-2">
+            <span class="pill"><i class="bi bi-check2-circle" aria-hidden="true"></i>Fácil de probar</span>
+            <span class="pill"><i class="bi bi-shield-lock" aria-hidden="true"></i>Privacidad primero</span>
+            <span class="pill"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Reportes listos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="product-card p-4 p-lg-5">
+          <h5 class="mb-2">Contacto</h5>
+          <p style="color: var(--px-muted);">¿Empresa interesada en piloto o versión on-premise? Conversemos.</p>
+          <div class="d-grid gap-2">
+            <a class="btn btn-outline-privantix" href="mailto:hola@privantix.io"><i class="bi bi-envelope me-2"></i>hola@privantix.io</a>
+            <a class="btn btn-outline-privantix" href="#" onclick="copyEmail(event)"><i class="bi bi-clipboard me-2"></i>Copiar email</a>
+          </div>
+
+          <div class="mt-4">
+            <h6 class="mb-2">Casos de uso típicos</h6>
+            <ul class="mb-0" style="color: var(--px-muted);">
+              <li>Inventario de PII en carpetas compartidas.</li>
+              <li>Revisión de datasets antes de compartir.</li>
+              <li>Soporte a auditorías y cumplimiento.</li>
+              <li>Reducción de superficie de exposición.</li>
+            </ul>
+          </div>
+
+          <div class="mt-4">
+            <h6 class="mb-2">Modo de despliegue</h6>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tag">Local</span>
+              <span class="tag">Docker</span>
+              <span class="tag">On-premise</span>
+              <span class="tag">SaaS (más adelante)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<div class="divider"></div>
+
+<section class="section" id="metodologias">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-9">
+        <h2 class="section-title fw-bold">Metodologías y estándares aplicados</h2>
+        <p class="section-subtitle mb-0">
+          Privantix se diseña “privacy & security by design” y traduce marcos reconocidos en controles, workflows y reportes accionables.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-lg-6">
+        <div class="product-card p-4">
+          <div class="d-flex align-items-center gap-2">
+            <span class="icon-badge teal"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
+            <div>
+              <div class="fw-semibold">Privacidad y cumplimiento</div>
+              <div class="small" style="color: var(--px-muted);">Cómo llevamos marcos de privacidad a acciones concretas</div>
+            </div>
+          </div>
+          <ul class="mt-3 mb-0" style="color: var(--px-muted);">
+            <li><strong>Privacy by Design</strong>: minimización, propósito, control y trazabilidad desde el inicio.</li>
+            <li><strong>DPIA/PIA</strong>: evaluación de impacto; reportes y evidencias reutilizables.</li>
+            <li><strong>NIST Privacy Framework</strong>: inventario, gobernanza, control y comunicación de riesgo.</li>
+            <li><strong>ISO/IEC 27701</strong>: extensión de privacidad sobre un SGSI (alineable a ISO 27001).</li>
+            <li><strong>Principios de minimización</strong>: “need-to-know”, “least privilege” y retención.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="product-card p-4">
+          <div class="d-flex align-items-center gap-2">
+            <span class="icon-badge"><i class="bi bi-lock" aria-hidden="true"></i></span>
+            <div>
+              <div class="fw-semibold">Seguridad y gestión de controles</div>
+              <div class="small" style="color: var(--px-muted);">Controles, hardening y gestión de riesgo</div>
+            </div>
+          </div>
+          <ul class="mt-3 mb-0" style="color: var(--px-muted);">
+            <li><strong>ISO/IEC 27001</strong>: controles de seguridad, auditoría y mejora continua.</li>
+            <li><strong>NIST Cybersecurity Framework</strong>: Identify–Protect–Detect–Respond–Recover.</li>
+            <li><strong>CIS Controls</strong>: priorización de controles prácticos para reducir superficie de exposición.</li>
+            <li><strong>OWASP</strong>: buenas prácticas para apps y APIs (incl. Top 10).</li>
+            <li><strong>Threat modeling</strong>: <strong>STRIDE</strong> (seguridad) y <strong>LINDDUN</strong> (privacidad).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="product-card p-4">
+          <div class="d-flex align-items-center gap-2">
+            <span class="icon-badge teal"><i class="bi bi-diagram-3" aria-hidden="true"></i></span>
+            <div>
+              <div class="fw-semibold">Gobierno de datos</div>
+              <div class="small" style="color: var(--px-muted);">Estructura, roles y calidad</div>
+            </div>
+          </div>
+          <ul class="mt-3 mb-0" style="color: var(--px-muted);">
+            <li><strong>DAMA-DMBOK</strong>: dominios de gobernanza, calidad y metadata.</li>
+            <li><strong>COBIT</strong>: alineación de TI con objetivos de negocio y controles.</li>
+            <li><strong>ITIL</strong>: gestión de servicios y operación (incidentes, cambios, problemas).</li>
+            <li><strong>Data catalog / metadata</strong>: inventario y linaje para trazabilidad.</li>
+            <li><strong>Data quality</strong>: reglas, métricas y evidencias de calidad.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="product-card p-4">
+          <div class="d-flex align-items-center gap-2">
+            <span class="icon-badge"><i class="bi bi-activity" aria-hidden="true"></i></span>
+            <div>
+              <div class="fw-semibold">Anonimización y riesgo de reidentificación</div>
+              <div class="small" style="color: var(--px-muted);">Técnicas estadísticas y prácticas seguras de compartición</div>
+            </div>
+          </div>
+          <ul class="mt-3 mb-0" style="color: var(--px-muted);">
+            <li><strong>Five Safes</strong>: safe people, projects, settings, data, outputs.</li>
+            <li><strong>k-anonymity</strong>, <strong>l-diversity</strong>, <strong>t-closeness</strong>: evaluación de riesgo por atributos cuasi-identificadores.</li>
+            <li><strong>Pseudonimización</strong> y <strong>enmascaramiento</strong>: reglas reproducibles y auditables.</li>
+            <li><strong>Data sharing agreements</strong>: principios de propósito, minimización y control.</li>
+            <li><strong>Auditoría</strong>: evidencias de transformación y versionado de datasets.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="quote-card p-4">
+          <div class="d-flex align-items-start gap-3">
+            <span class="icon-badge teal"><i class="bi bi-lightbulb" aria-hidden="true"></i></span>
+            <div>
+              <div class="fw-semibold">De marco a herramienta</div>
+              <div style="color: var(--px-muted);">
+                Privantix convierte estos marcos en <strong>escaneos repetibles</strong>, <strong>políticas configurables</strong>,
+                <strong>reportes de evidencia</strong> y un <strong>roadmap</strong> claro de capacidades.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<div class="divider"></div>
+
+<section class="section" id="ia">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-9">
+        <h2 class="section-title fw-bold">Inteligencia Artificial y protección de datos</h2>
+        <p class="section-subtitle mb-0">
+          Privantix incorpora IA de forma responsable para detectar riesgos, proteger información y habilitar el uso seguro de datos.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-3">
+
+      <div class="col-lg-6">
+        <div class="product-card p-4">
+          <h5>IA responsable (Responsible AI)</h5>
+          <ul style="color: var(--px-muted);" class="mb-0">
+            <li>Principios de transparencia y explicabilidad.</li>
+            <li>Evaluación de sesgos y riesgos algorítmicos.</li>
+            <li>Uso ético de datos para entrenamiento.</li>
+            <li>Supervisión humana en decisiones críticas.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="product-card p-4">
+          <h5>Detección inteligente de información sensible</h5>
+          <ul style="color: var(--px-muted);" class="mb-0">
+            <li>NLP para identificar datos sensibles en texto libre.</li>
+            <li>Clasificación semántica de documentos.</li>
+            <li>Detección contextual más allá de patrones.</li>
+            <li>Modelos adaptables a español y LATAM.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="product-card p-4">
+          <h5>Evaluación de riesgo para datasets usados en IA</h5>
+          <ul style="color: var(--px-muted);" class="mb-0">
+            <li>Detección de atributos sensibles antes del entrenamiento.</li>
+            <li>Prevención de fuga de datos en modelos.</li>
+            <li>Evaluación de riesgo de reidentificación.</li>
+            <li>Buenas prácticas para datasets seguros.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="product-card p-4">
+          <h5>Seguridad en modelos y LLM</h5>
+          <ul style="color: var(--px-muted);" class="mb-0">
+            <li>Prevención de exposición de datos en prompts.</li>
+            <li>Control de información sensible en respuestas.</li>
+            <li>Protección frente a prompt injection.</li>
+            <li>Auditoría de uso y trazabilidad.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="quote-card p-4">
+          <strong>IA como aliada de la privacidad:</strong>
+          <div style="color: var(--px-muted);">
+            Privantix utiliza inteligencia artificial para aumentar la capacidad de detección,
+            reducir errores humanos y permitir el uso seguro de los datos sin comprometer la privacidad.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer py-5 mt-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <span class="d-inline-flex align-items-center justify-content-center" style="width:34px;height:34px;border-radius:10px;background: rgba(255,255,255,.12);">
+            <i class="bi bi-shield-lock" aria-hidden="true"></i>
+          </span>
+          <strong>Privantix</strong>
+        </div>
+        <p class="mb-0" style="color: rgba(255,255,255,.72);">Herramientas prácticas para protección de datos, privacidad y riesgo.</p>
+        <p class="mt-2 small" style="color: rgba(255,255,255,.62);">© <span id="year"></span> Privantix. Todos los derechos reservados.</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h6 class="text-white">Productos</h6>
+        <ul class="list-unstyled mb-0">
+          <li><a href="product.html">Privantix Scan</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="open.html">Open-first</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="text-white">Compañía</h6>
+        <ul class="list-unstyled mb-0">
+          <li><a href="vision.html">Visión & Misión</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h6 class="text-white">Legal</h6>
+        <ul class="list-unstyled mb-0">
+          <li><a href="legal/privacy.html">Política de privacidad</a></li>
+          <li><a href="legal/terms.html">Términos</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Privantix</strong>
+      <small>listo</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+    <div class="toast-body">Listo.</div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

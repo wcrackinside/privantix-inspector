@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privantix ACL Manager</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #1a1d23;
+      color: #e4e6eb;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin: 0 0 1rem;
+      color: #7dd3fc;
+    }
+    .toolbar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .toolbar label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: #2d323e;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .toolbar label:hover { background: #3d4452; }
+    .toolbar input[type="file"] { display: none; }
+    .toolbar button {
+      padding: 0.5rem 1rem;
+      background: #0ea5e9;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .toolbar button:hover { background: #0284c7; }
+    .toolbar button.secondary {
+      background: #475569;
+    }
+    .toolbar button.secondary:hover { background: #64748b; }
+    .toolbar button.danger {
+      background: #dc2626;
+    }
+    .toolbar button.danger:hover { background: #b91c1c; }
+    .info {
+      padding: 0.75rem;
+      background: #1e293b;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      background: #252830;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    th, td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #3d4452;
+    }
+    th {
+      background: #2d323e;
+      color: #94a3b8;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+    }
+    tr:hover { background: #2d323e; }
+    tr.selected { background: #1e3a5f; }
+    td.path { max-width: 300px; overflow: hidden; text-overflow: ellipsis; }
+    .detail {
+      padding: 1rem;
+      background: #1e293b;
+      border-radius: 8px;
+      font-family: 'Consolas', monospace;
+      font-size: 0.8rem;
+      white-space: pre-wrap;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .modal.show { display: flex; }
+    .modal-content {
+      background: #252830;
+      padding: 1.5rem;
+      border-radius: 8px;
+      min-width: 400px;
+      max-width: 90vw;
+    }
+    .modal h3 { margin: 0 0 1rem; color: #7dd3fc; }
+    .modal label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .modal input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      background: #1a1d23;
+      border: 1px solid #3d4452;
+      border-radius: 4px;
+      color: #e4e6eb;
+    }
+    .modal-actions {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+    .badge.compliant { background: #166534; color: #86efac; }
+    .badge.non_compliant { background: #991b1b; color: #fca5a5; }
+    .empty { color: #64748b; padding: 2rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>Privantix ACL Manager</h1>
+  <p class="info">Visualice auditorías de permisos, cree backups y restaure ACLs desde respaldos.</p>
+
+  <div class="toolbar">
+    <label>
+      <input type="file" id="fileInput" accept=".json">
+      Abrir auditoría JSON
+    </label>
+    <button id="btnBackup" disabled>Crear backup de permisos</button>
+    <button id="btnRestore" class="secondary">Restaurar desde backup</button>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Ruta</th>
+          <th>Nombre</th>
+          <th>Propietario</th>
+          <th>Permisos</th>
+          <th>Cumplimiento</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <div id="empty" class="empty">Cargue un archivo de auditoría JSON para ver los directorios y sus permisos.</div>
+  <div id="detail" class="detail" style="display:none"></div>
+
+  <div id="modalBackup" class="modal">
+    <div class="modal-content">
+      <h3>Crear backup de permisos</h3>
+      <p style="font-size:0.85rem;color:#94a3b8;margin-bottom:1rem">Guarda los permisos actuales en un archivo usando icacls.</p>
+      <label>Ruta raíz a respaldar</label>
+      <input type="text" id="backupRoot" placeholder="L:\">
+      <label>Archivo de backup (.txt)</label>
+      <input type="text" id="backupPath" placeholder="C:\backups\permisos.txt">
+      <div class="modal-actions">
+        <button class="secondary" onclick="closeModal('modalBackup')">Cancelar</button>
+        <button onclick="doBackup()">Crear backup</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalRestore" class="modal">
+    <div class="modal-content">
+      <h3>Restaurar desde backup</h3>
+      <p style="font-size:0.85rem;color:#94a3b8;margin-bottom:1rem">Restaura permisos desde un archivo creado con icacls /save.</p>
+      <label>Archivo de backup</label>
+      <input type="text" id="restoreBackup" placeholder="C:\backups\permisos.txt">
+      <label>Directorio raíz donde restaurar</label>
+      <input type="text" id="restoreRoot" placeholder="L:\">
+      <div class="modal-actions">
+        <button class="secondary" onclick="closeModal('modalRestore')">Cancelar</button>
+        <button class="danger" onclick="doRestore()">Restaurar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let audit = null;
+
+    document.getElementById('fileInput').onchange = async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const form = new FormData();
+      form.append('file', file);
+      try {
+        const r = await fetch('/api/upload', { method: 'POST', body: form });
+        if (!r.ok) throw new Error(await r.text());
+        audit = await r.json();
+        renderTable();
+        document.getElementById('btnBackup').disabled = false;
+        document.getElementById('backupRoot').value = audit.path || '';
+      } catch (err) {
+        alert('Error: ' + err.message);
+      }
+      e.target.value = '';
+    };
+
+    document.getElementById('btnBackup').onclick = () => {
+      if (audit) document.getElementById('backupRoot').value = audit.path;
+      document.getElementById('modalBackup').classList.add('show');
+    };
+
+    document.getElementById('btnRestore').onclick = () => {
+      document.getElementById('modalRestore').classList.add('show');
+    };
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('show');
+    }
+
+    async function doBackup() {
+      const root = document.getElementById('backupRoot').value.trim();
+      const path = document.getElementById('backupPath').value.trim();
+      if (!root || !path) {
+        alert('Complete ambos campos.');
+        return;
+      }
+      try {
+        const r = await fetch('/api/backup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ rootPath: root, backupPath: path })
+        });
+        if (!r.ok) throw new Error(await r.text());
+        const data = await r.json();
+        alert('Backup creado: ' + data.path);
+        closeModal('modalBackup');
+      } catch (err) {
+        alert('Error: ' + err.message);
+      }
+    }
+
+    async function doRestore() {
+      const root = document.getElementById('restoreRoot').value.trim();
+      const path = document.getElementById('restoreBackup').value.trim();
+      if (!root || !path) {
+        alert('Complete ambos campos.');
+        return;
+      }
+      if (!confirm('¿Restaurar permisos? Esto sobrescribirá los permisos actuales.')) return;
+      try {
+        const r = await fetch('/api/restore', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ rootPath: root, backupPath: path })
+        });
+        if (!r.ok) throw new Error(await r.text());
+        alert('Restauración completada.');
+        closeModal('modalRestore');
+      } catch (err) {
+        alert('Error: ' + err.message);
+      }
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('tbody');
+      const empty = document.getElementById('empty');
+      tbody.innerHTML = '';
+      if (!audit || !audit.dirs || audit.dirs.length === 0) {
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      audit.dirs.forEach((d, i) => {
+        const tr = document.createElement('tr');
+        tr.dataset.idx = i;
+        tr.onclick = () => selectRow(i);
+        tr.innerHTML = `
+          <td class="path" title="${escapeHtml(d.path)}">${escapeHtml(d.path)}</td>
+          <td>${escapeHtml(d.name)}</td>
+          <td>${escapeHtml(d.owner)}</td>
+          <td>${escapeHtml(d.permissions)}</td>
+          <td>${d.compliance_status ? `<span class="badge ${d.compliance_status}">${d.compliance_status}</span>` : '-'}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function selectRow(idx) {
+      document.querySelectorAll('#tbody tr').forEach(tr => tr.classList.remove('selected'));
+      const tr = document.querySelector(`#tbody tr[data-idx="${idx}"]`);
+      if (tr) tr.classList.add('selected');
+      const d = audit.dirs[idx];
+      let html = `Ruta: ${escapeHtml(d.path)}\nPropietario: ${escapeHtml(d.owner)}\nPermisos: ${escapeHtml(d.permissions)}\n\nACLs:\n`;
+      (d.acls || []).forEach(acl => {
+        if (!acl.includes('procesaron') && !acl.includes('processed')) {
+          html += '  • ' + escapeHtml(acl) + '\n';
+        }
+      });
+      if (d.trusted_principals?.length || d.outside_principals?.length) {
+        html += '\n';
+        if (d.trusted_principals?.length) html += 'Confianza: ' + d.trusted_principals.join(', ') + '\n';
+        if (d.outside_principals?.length) html += 'Externos: ' + d.outside_principals.join(', ') + '\n';
+      }
+      const detail = document.getElementById('detail');
+      detail.textContent = html;
+      detail.style.display = 'block';
+    }
+
+    function escapeHtml(s) {
+      if (!s) return '';
+      const div = document.createElement('div');
+      div.textContent = s;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
