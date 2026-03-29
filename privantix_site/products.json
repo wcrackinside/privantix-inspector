@@ -6,7 +6,7 @@
     "repo": "wcrackinside/privantix-inspector",
     "documentation": "https://github.com/wcrackinside/privantix-inspector/tree/main/docs",
     "changelog": "https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md",
-    "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
+    "roadmap": "https://www.privantix.io/roadmap.html"
   },
   {
     "id": "privantix-acl-audit",
@@ -15,7 +15,7 @@
     "repo": "wcrackinside/privantix-inspector",
     "documentation": "https://github.com/wcrackinside/privantix-inspector/blob/main/docs/acl-audit.md",
     "changelog": "https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md",
-    "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
+    "roadmap": "https://www.privantix.io/roadmap.html"
   },
   {
     "id": "privantix-catalog",
@@ -24,7 +24,7 @@
     "repo": "wcrackinside/privantix-inspector",
     "documentation": "https://github.com/wcrackinside/privantix-inspector/tree/main/docs",
     "changelog": "https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md",
-    "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
+    "roadmap": "https://www.privantix.io/roadmap.html"
   },
   {
     "id": "privantix-compare",
@@ -33,7 +33,7 @@
     "repo": "wcrackinside/privantix-inspector",
     "documentation": "https://github.com/wcrackinside/privantix-inspector/tree/main/docs",
     "changelog": "https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md",
-    "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
+    "roadmap": "https://www.privantix.io/roadmap.html"
   },
   {
     "id": "privantix-datalens",
@@ -42,7 +42,7 @@
     "repo": "wcrackinside/privantix-datalens",
     "documentation": "https://github.com/wcrackinside/privantix-datalens",
     "changelog": "https://github.com/wcrackinside/privantix-datalens/blob/main/CHANGELOG.md",
-    "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
+    "roadmap": "https://www.privantix.io/roadmap.html"
   },
   {
     "id": "privantix-docs",
@@ -51,6 +51,6 @@
     "repo": "wcrackinside/privantix-docs",
     "documentation": "https://github.com/wcrackinside/privantix-docs",
     "changelog": "https://github.com/wcrackinside/privantix-docs/blob/main/README.md",
-    "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
+    "roadmap": "https://www.privantix.io/roadmap.html"
   }
 ]

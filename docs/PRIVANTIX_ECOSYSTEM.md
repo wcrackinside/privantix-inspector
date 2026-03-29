@@ -7,7 +7,7 @@ Este documento resume la arquitectura de repositorios descrita en [`PRIVANTIX_GI
 | Repositorio | Rol |
 |-------------|-----|
 | [privantix-inspector](https://github.com/wcrackinside/privantix-inspector) | Monorepo principal: Inspector, ACL Audit, Catalog, Compare, documentación de producto y sitio estático (`privantix_site/`). Releases con GoReleaser. |
-| [privantix-web](https://github.com/wcrackinside/privantix-web) | Sitio público (GitHub Pages). Se sincroniza desde `privantix_site/` del monorepo. |
+| [privantix-web](https://github.com/wcrackinside/privantix-web) | Sitio público en producción **https://www.privantix.io** (FTP desde `privantix_site/`). El repo GitHub puede seguir como copia o despliegue alternativo. |
 | [privantix-docs](https://github.com/wcrackinside/privantix-docs) | Documentación transversal: arquitectura, estándares, governanza, whitepapers. |
 | [privantix-acl-audit](https://github.com/wcrackinside/privantix-acl-audit) | Punto de entrada / roadmap para la herramienta ACL; el código fuente vive hoy en el monorepo (`cmd/privantix-acl-audit`). |
 | [privantix-datalens](https://github.com/wcrackinside/privantix-datalens) | Producto planificado (exploración / DuckDB / visor). |
