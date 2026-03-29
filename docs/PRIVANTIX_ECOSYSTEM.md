@@ -14,8 +14,9 @@ Este documento resume la arquitectura de repositorios descrita en [`PRIVANTIX_GI
 
 ## Sitio web y `products.json`
 
-- Archivo de datos: `privantix_site/products.json` (listado de productos, repos, versiones, enlaces).
-- La home carga las tarjetas vía `assets/js/products-loader.js`.
+- Archivo de datos: `privantix_site/products.json` (producto, descripción, `repo` `owner/name`, enlaces a documentación, changelog y roadmap).
+- La home carga las tarjetas con `assets/js/products-loader.js`, que consulta **`GET https://api.github.com/repos/{owner}/{repo}/releases/latest`** para obtener `tag_name`, `name`, `published_at`, `assets[].browser_download_url`, `assets[].download_count`, `html_url` (notas de versión en GitHub).
+- Si la API falla (p. ej. límite de peticiones), se puede usar la caché generada por `scripts/sync_releases_cache.py` → `privantix_site/data/releases-cache.json`.
 - Carpetas de compatibilidad con el prompt: `css/`, `js/`, `img/`, más `docs/`, `roadmap/`, `downloads/` bajo `privantix_site/`.
 
 ## Versionado y releases
@@ -30,4 +31,4 @@ Este documento resume la arquitectura de repositorios descrita en [`PRIVANTIX_GI
 | Binarios + artefactos | `release.yml` (tags `v*`) |
 | Validación `products.json` | `validate-products-json.yml` |
 
-La generación automática de `products.json` desde la API de GitHub queda como mejora futura.
+Los metadatos de release **no** se duplican en `products.json`: se leen en tiempo de carga desde la API (o desde `releases-cache.json` como respaldo).

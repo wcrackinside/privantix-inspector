@@ -16,6 +16,9 @@ coverage.out
 # Local outputs and generated reports (keep examples/ if needed)
 /output/
 
+# Optional GitHub API cache (generate with scripts/sync_releases_cache.py)
+privantix_site/data/releases-cache.json
+
 # Env / secrets
 .env
 .env.*

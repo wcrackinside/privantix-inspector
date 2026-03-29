@@ -4,14 +4,8 @@
     "name": "Privantix Inspector",
     "description": "Inspección técnica de archivos tabulares (CSV, Excel, Parquet, archivos comprimidos), perfiles de columnas, reglas de gobernanza y exportación JSON/CSV/HTML.",
     "repo": "wcrackinside/privantix-inspector",
-    "version": "v0.1.0",
-    "downloads": [
-      {
-        "label": "GitHub Releases (ZIP con herramientas)",
-        "url": "https://github.com/wcrackinside/privantix-inspector/releases"
-      }
-    ],
     "documentation": "https://github.com/wcrackinside/privantix-inspector/tree/main/docs",
+    "changelog": "https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md",
     "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
   },
   {
@@ -19,14 +13,8 @@
     "name": "Privantix ACL Audit",
     "description": "Auditoría de permisos en carpetas y subcarpetas, grupos de confianza, usuarios revocados y estado de cumplimiento.",
     "repo": "wcrackinside/privantix-inspector",
-    "version": "v0.1.0",
-    "downloads": [
-      {
-        "label": "Mismo paquete que Inspector (CLI)",
-        "url": "https://github.com/wcrackinside/privantix-inspector/releases"
-      }
-    ],
     "documentation": "https://github.com/wcrackinside/privantix-inspector/blob/main/docs/acl-audit.md",
+    "changelog": "https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md",
     "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
   },
   {
@@ -34,14 +22,8 @@
     "name": "Privantix Catalog",
     "description": "Genera inventario a partir de analysis.json: datasets, columnas e indicadores de gobernanza.",
     "repo": "wcrackinside/privantix-inspector",
-    "version": "v0.1.0",
-    "downloads": [
-      {
-        "label": "GitHub Releases",
-        "url": "https://github.com/wcrackinside/privantix-inspector/releases"
-      }
-    ],
     "documentation": "https://github.com/wcrackinside/privantix-inspector/tree/main/docs",
+    "changelog": "https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md",
     "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
   },
   {
@@ -49,14 +31,8 @@
     "name": "Privantix Compare",
     "description": "Compara dos ejecuciones de Inspector (archivos añadidos, eliminados o modificados).",
     "repo": "wcrackinside/privantix-inspector",
-    "version": "v0.1.0",
-    "downloads": [
-      {
-        "label": "GitHub Releases",
-        "url": "https://github.com/wcrackinside/privantix-inspector/releases"
-      }
-    ],
     "documentation": "https://github.com/wcrackinside/privantix-inspector/tree/main/docs",
+    "changelog": "https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md",
     "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
   },
   {
@@ -64,9 +40,8 @@
     "name": "Privantix DataLens",
     "description": "Exploración y visualización de datos (visor, DuckDB, preview). Producto en diseño.",
     "repo": "wcrackinside/privantix-datalens",
-    "version": "v0.0.0",
-    "downloads": [],
     "documentation": "https://github.com/wcrackinside/privantix-datalens",
+    "changelog": "https://github.com/wcrackinside/privantix-datalens/blob/main/CHANGELOG.md",
     "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
   },
   {
@@ -74,9 +49,8 @@
     "name": "Privantix Docs",
     "description": "Documentación central del ecosistema: arquitectura, estándares, governanza, whitepapers.",
     "repo": "wcrackinside/privantix-docs",
-    "version": "",
-    "downloads": [],
     "documentation": "https://github.com/wcrackinside/privantix-docs",
+    "changelog": "https://github.com/wcrackinside/privantix-docs/blob/main/README.md",
     "roadmap": "https://wcrackinside.github.io/privantix-web/roadmap/"
   }
 ]

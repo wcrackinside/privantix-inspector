@@ -458,7 +458,7 @@ Reporte: ./output/repository_20250306.json</pre>
     <div class="row mb-4">
       <div class="col-lg-8">
         <h2 class="fw-bold section-title">Suite Privantix</h2>
-        <p class="section-subtitle mb-0">Productos, versiones y enlaces (fuente: <code>products.json</code>). Las descargas apuntan a <a href="https://github.com/wcrackinside/privantix-inspector/releases" target="_blank" rel="noopener">GitHub Releases</a>.</p>
+        <p class="section-subtitle mb-0">Metadatos en <code>products.json</code>; la <strong>última versión, descargas y contadores</strong> se obtienen de la <a href="https://docs.github.com/en/rest/releases/releases#get-the-latest-release" target="_blank" rel="noopener">API de GitHub Releases</a> (<code>/releases/latest</code>). Caché opcional: <code>scripts/sync_releases_cache.py</code> → <code>data/releases-cache.json</code>.</p>
       </div>
     </div>
     <div id="product-cards-root" class="row g-3"></div>
