@@ -64,7 +64,7 @@
             <span class="icon-badge teal"><i class="bi bi-box-seam"></i></span>
             <div>
               <div class="fw-semibold">Privantix Inspector</div>
-              <div class="small" style="color: var(--px-muted);">Release actual · MVP 1</div>
+              <div class="small" id="product-hero-release-line" style="color: var(--px-muted);">Consultando última versión en GitHub…</div>
             </div>
           </div>
           <p class="mt-3 mb-3" style="color: var(--px-muted);">Analiza datasets, extrae metadata técnica y perfila columnas para entregar visibilidad estructural del repositorio.</p>
@@ -189,6 +189,17 @@
             </div>
           </div>
           <p style="color: var(--px-muted);">Escanea datasets tabulares, detecta estructura y genera metadata útil para auditoría, documentación e integración de fuentes.</p>
+          <div class="product-downloads border-top pt-3 mt-3" data-gh-repo="wcrackinside/privantix-inspector">
+            <h6 class="mb-2"><i class="bi bi-download me-1" aria-hidden="true"></i>Descargas</h6>
+            <p class="small mb-2" style="color: var(--px-muted);">Última release según <code>api.github.com/repos/…/releases/latest</code>. Un mismo paquete incluye los ejecutables de la suite CLI.</p>
+            <p class="small mb-2 gh-rel-meta" style="color: var(--px-muted);">Cargando…</p>
+            <div class="d-flex flex-wrap gap-2 gh-rel-assets"></div>
+            <div class="small mt-2 d-flex flex-wrap gap-2 align-items-center">
+              <a class="gh-rel-notes" href="#" target="_blank" rel="noopener" style="display:none">Notas de versión</a>
+              <a href="https://github.com/wcrackinside/privantix-inspector" target="_blank" rel="noopener">Repositorio</a>
+              <a href="https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+            </div>
+          </div>
           <div class="row g-3 mt-1">
             <div class="col-md-6">
               <div class="feature-card p-3 h-100">
@@ -218,6 +229,17 @@
             </div>
           </div>
           <p style="color: var(--px-muted);">Revisa ACL y permisos de carpetas para identificar exposición innecesaria, validar grupos confiables y documentar evidencia técnica.</p>
+          <div class="product-downloads border-top pt-3 mt-3" data-gh-repo="wcrackinside/privantix-inspector">
+            <h6 class="mb-2"><i class="bi bi-download me-1" aria-hidden="true"></i>Descargas</h6>
+            <p class="small mb-2" style="color: var(--px-muted);">Mismo release que Inspector y Catalog: <code>privantix-acl-audit</code> va en el ZIP/tar de la release.</p>
+            <p class="small mb-2 gh-rel-meta" style="color: var(--px-muted);">Cargando…</p>
+            <div class="d-flex flex-wrap gap-2 gh-rel-assets"></div>
+            <div class="small mt-2 d-flex flex-wrap gap-2 align-items-center">
+              <a class="gh-rel-notes" href="#" target="_blank" rel="noopener" style="display:none">Notas de versión</a>
+              <a href="https://github.com/wcrackinside/privantix-inspector" target="_blank" rel="noopener">Repositorio</a>
+              <a href="https://github.com/wcrackinside/privantix-inspector/blob/main/docs/acl-audit.md" target="_blank" rel="noopener">Documentación ACL</a>
+            </div>
+          </div>
           <div class="row g-3 mt-1">
             <div class="col-md-6">
               <div class="feature-card p-3 h-100">
@@ -247,6 +269,17 @@
             </div>
           </div>
           <p style="color: var(--px-muted);">Transforma los resultados del Inspector en un inventario estructurado de datasets, con visibilidad de columnas, metadata e indicadores de gobernanza.</p>
+          <div class="product-downloads border-top pt-3 mt-3" data-gh-repo="wcrackinside/privantix-inspector">
+            <h6 class="mb-2"><i class="bi bi-download me-1" aria-hidden="true"></i>Descargas</h6>
+            <p class="small mb-2" style="color: var(--px-muted);">Incluye <code>privantix-catalog</code> en el mismo paquete de releases.</p>
+            <p class="small mb-2 gh-rel-meta" style="color: var(--px-muted);">Cargando…</p>
+            <div class="d-flex flex-wrap gap-2 gh-rel-assets"></div>
+            <div class="small mt-2 d-flex flex-wrap gap-2 align-items-center">
+              <a class="gh-rel-notes" href="#" target="_blank" rel="noopener" style="display:none">Notas de versión</a>
+              <a href="https://github.com/wcrackinside/privantix-inspector" target="_blank" rel="noopener">Repositorio</a>
+              <a href="https://github.com/wcrackinside/privantix-inspector/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+            </div>
+          </div>
           <div class="row g-3 mt-1">
             <div class="col-md-6">
               <div class="feature-card p-3 h-100">
@@ -767,6 +800,7 @@ privantix-acl-audit --path ./datos --output ./audit --trusted-groups ./trusted-g
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="assets/js/product-releases.js" defer></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
